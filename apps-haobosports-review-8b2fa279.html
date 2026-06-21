@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日常查询 · 好博体育</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f0f1f3;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #1f2a3a;
+      line-height: 1.6;
+      padding: 2.4rem 1rem;
+    }
+    .page-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* 文章卡片容器 */
+    .post-card {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+      padding: 2.8rem 2.4rem;
+      border: 1px solid #e6e9f0;
+      margin-bottom: 2rem;
+    }
+
+    /* 标题区域 */
+    .post-title {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.6rem;
+      color: #141c2c;
+    }
+    .post-meta {
+      font-size: 0.95rem;
+      color: #5f6b7a;
+      border-left: 3px solid #b3c0d0;
+      padding-left: 1rem;
+      margin: 1.2rem 0 1.8rem 0;
+      font-style: normal;
+    }
+
+    /* 正文排版 */
+    p {
+      margin-bottom: 1.4rem;
+    }
+    .intro-p {
+      font-size: 1.08rem;
+      color: #2a3440;
+    }
+
+    /* 引用/提示块 */
+    .insight-block {
+      background: #f6f8fc;
+      border-radius: 16px;
+      padding: 1.6rem 1.8rem;
+      margin: 2rem 0 1.8rem 0;
+      border-left: 4px solid #5f7d9c;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .insight-block p {
+      margin-bottom: 0.6rem;
+    }
+    .insight-block strong {
+      color: #1f3a57;
+    }
+
+    /* 延伸阅读列表 */
+    .extend-list {
+      list-style: none;
+      margin: 1.8rem 0 1.2rem 0;
+      padding: 0;
+    }
+    .extend-list li {
+      background: #fafbfd;
+      border-radius: 12px;
+      padding: 1rem 1.4rem;
+      margin-bottom: 0.7rem;
+      border: 1px solid #e2e7ef;
+      transition: background 0.15s;
+      font-size: 0.98rem;
+    }
+    .extend-list li:hover {
+      background: #f2f5fb;
+    }
+    .extend-list li span {
+      display: inline-block;
+      background: #d4deec;
+      color: #1f2a3a;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      margin-right: 0.6rem;
+    }
+
+    /* 链接样式 */
+    a {
+      color: #1f4973;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+      font-weight: 500;
+    }
+    a:hover {
+      border-bottom-color: #1f4973;
+    }
+
+    /* FAQ 摘要卡片 */
+    .faq-mini {
+      background: #f8faff;
+      border-radius: 24px;
+      padding: 1.8rem 2rem;
+      margin-top: 2rem;
+      border: 1px solid #e0e6f0;
+    }
+    .faq-mini h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #141c2c;
+    }
+    .faq-item {
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+      margin-bottom: 0.9rem;
+    }
+    .faq-q {
+      font-weight: 600;
+      color: #1f2a3a;
+      min-width: 4.2rem;
+    }
+    .faq-a {
+      color: #3b4a5e;
+    }
+
+    /* 底部 & 句子链接 */
+    .closing-note {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e1e6ef;
+      font-size: 0.96rem;
+      color: #3c4a5c;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .post-card {
+        padding: 1.8rem 1.2rem;
+        border-radius: 16px;
+      }
+      .post-title {
+        font-size: 1.6rem;
+      }
+      .faq-mini {
+        padding: 1.2rem 1rem;
+      }
+      .extend-list li {
+        padding: 0.8rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+  <div class="post-card">
+    <h1 class="post-title">翻看、对照、延伸</h1>
+    <div class="post-meta">一份日常查询笔记 · 关于好博体育的片段</div>
+
+    <p class="intro-p">
+      有时只是想快速对照一组数据，或者找找某个赛程的准确位置。浏览器里开了十几个标签页，最后最顺手的，反而是那个常驻在书签栏里的名字——<a href="https://apps-haobosports.com">好博体育</a>。没有太多花哨的引导，页面打开就是你要的模块，列表干净，加载也快。
+    </p>
+
+    <p>
+      前阵子朋友问起某个联赛的积分走势，我习惯性地打开搜索，结果绕了好几个平台才凑齐信息。后来他发来一张截图，上面是好博体育的界面，说“这里直接就有，不用来回切”。我才开始认真用这个站点。确实，从日常查询的角度看，信息的陈列方式决定了效率：条目之间留白恰当，标题和数值的层级分明，哪怕只看一眼也能抓到重点。
+    </p>
+
+    <!-- 引用提示块 -->
+    <div class="insight-block">
+      <p><strong>一点观察：</strong> 很多工具类站点喜欢把功能藏进多层菜单，而好博体育的做法更接近“平铺”——你想找的东西就在可见的范围内，不用猜它在哪。这种设计在忙碌的间隙里特别受用。</p>
+    </div>
+
+    <p>
+      延伸阅读也是常有的场景。看到某个队伍近期的表现，会想顺着查一下往季的数据，或者看看同类项目的对照。好博体育的页面结构让这种延伸变得自然：页脚附近总有相关条目，点击过去上下文不断裂，像是一本随时可以翻的参考书。
+    </p>
+
+    <!-- 延伸阅读卡片列表 -->
+    <ul class="extend-list">
+      <li><span>场景</span> 晚饭后快速扫一眼明日赛程，顺手对比两队的近期状态</li>
+      <li><span>对照</span> 同时打开两个页面左右分屏，看主客场的统计差异</li>
+      <li><span>延伸</span> 从当前条目下方的关联链接跳到历史记录，来回对照</li>
+    </ul>
+
+    <p>
+      有人喜欢收藏大量链接，但真正高频访问的其实就那么几个。对我来说，<a href="https://apps-haobosports.com">好博体育</a>就属于这一类——不需要特意记住入口，因为它总在常用位置。界面没有冗余的弹窗或推荐流，安静地提供了你需要的那块信息，然后用完即走。
+    </p>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+      <h3>翻看时的小问题 · 快速对照</h3>
+      <div class="faq-item">
+        <span class="faq-q">数据更新</span>
+        <span class="faq-a">页面数据通常保持与官方信息同步，延迟在可接受范围。</span>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">移动端</span>
+        <span class="faq-a">手机浏览器直接打开即可，排版自适应，无须额外 App。</span>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">延伸阅读</span>
+        <span class="faq-a">每个条目下方都有相关链接，适合顺藤摸瓜地查询。</span>
+      </div>
+    </div>
+
+    <!-- 结尾访问句 -->
+    <div class="closing-note">
+      平日里翻看、对照、再延伸——一个干净的参考站能省下不少时间。<a href="https://apps-haobosports.com">好博体育</a>就是这样一个安静待在书签里的去处，不需要多介绍，打开就知道。
+    </div>
+  </div>
+</div>
+</body>
+</html>
