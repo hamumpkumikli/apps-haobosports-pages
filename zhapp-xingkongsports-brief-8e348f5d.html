@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星空体育 · 产品说明页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f8f9fa;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e1e2a;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .page {
+      max-width: 740px;
+      width: 90%;
+      margin: 0 auto;
+      padding: 3rem 0 2.5rem;
+      flex: 1;
+    }
+    /* 标题层级 */
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+      color: #181820;
+      line-height: 1.2;
+    }
+    .subhead {
+      font-size: 1rem;
+      color: #5b5b6b;
+      margin-bottom: 2.8rem;
+      border-bottom: 1px solid #e2e4ea;
+      padding-bottom: 1.2rem;
+    }
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin: 2.5rem 0 1rem 0;
+      color: #20202c;
+      letter-spacing: -0.01em;
+    }
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 1.6rem 0 0.3rem 0;
+      color: #2b2b3a;
+    }
+    p {
+      margin-bottom: 1.2rem;
+      color: #2e2e3e;
+    }
+    /* 卡片、列表、视觉修饰 */
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 1.8rem 0 1rem;
+    }
+    .card {
+      flex: 1 1 180px;
+      background: white;
+      border-radius: 14px;
+      padding: 1.5rem 1.2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+      border: 1px solid #edf0f5;
+      transition: box-shadow 0.15s;
+    }
+    .card h4 {
+      font-size: 1rem;
+      font-weight: 540;
+      margin-bottom: 0.4rem;
+      color: #1a1a26;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: #3d3d4f;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+    .highlight {
+      background: #f0f3f7;
+      border-left: 4px solid #3080d0;
+      padding: 1rem 1.4rem;
+      border-radius: 0 10px 10px 0;
+      margin: 1.6rem 0;
+    }
+    .highlight p {
+      margin-bottom: 0.2rem;
+    }
+    ul {
+      padding-left: 1.4rem;
+      margin: 0.8rem 0 1.4rem;
+      list-style: disc;
+    }
+    li {
+      margin-bottom: 0.4rem;
+      color: #2e2e40;
+    }
+    a {
+      color: #276ac0;
+      text-decoration: none;
+      font-weight: 480;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom 0.1s;
+    }
+    a:hover {
+      border-bottom-color: #276ac0;
+    }
+    .faq-item {
+      margin: 1.2rem 0 0.2rem;
+    }
+    .faq-question {
+      font-weight: 520;
+      margin-bottom: 0.1rem;
+      color: #1c1c2a;
+    }
+    .faq-answer {
+      color: #3e3e52;
+      font-size: 0.96rem;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #e2e5ec;
+      margin: 2rem 0;
+    }
+    .footer-note {
+      font-size: 0.85rem;
+      color: #6a6a7e;
+      border-top: 1px solid #e2e5ec;
+      padding-top: 1.6rem;
+      margin-top: 2.2rem;
+      text-align: left;
+    }
+    /* 响应式 */
+    @media (max-width: 520px) {
+      .page {
+        padding: 1.8rem 0;
+        width: 92%;
+      }
+      h1 {
+        font-size: 1.7rem;
+      }
+      .card {
+        flex: 1 1 100%;
+      }
+      .highlight {
+        padding: 0.9rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>星空体育</h1>
+    <div class="subhead">面向日常运动与轻竞技的稳定访问页 · 产品说明</div>
+
+    <p>
+      星空体育是一个围绕运动资讯、活动记录与基础竞技数据提供的轻量平台。无论你是偶尔关注赛事动态，还是需要一处整洁的信息入口，<a href="https://zhapp-xingkongsports.com">星空体育</a>都可以作为简洁的起点。本页从功能摘要、使用场景以及常见疑问出发，帮助你快速了解这个页面所指向的服务。
+    </p>
+
+    <h2>功能摘要</h2>
+    <p>平台主要围绕三个模块展开：运动资讯摘要、活动提醒以及个人化的记录查看。所有内容以清晰的时间线或卡片形式呈现，尽量减少不必要的跳转。</p>
+    <ul>
+      <li><strong>资讯流</strong>：按运动类别整理的短讯与赛历，更新频率适中，适合碎片阅读。</li>
+      <li><strong>活动记录</strong>：参与过的运动项目、时长与简单统计，数据归你所有。</li>
+      <li><strong>基础探索</strong>：无需注册即可浏览公开内容模块，降低使用门槛。</li>
+    </ul>
+
+    <h2>使用建议</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h4>日常浏览</h4>
+        <p>将<a href="https://zhapp-xingkongsports.com">星空体育</a>添加至浏览器书签或主屏幕，作为快速查看运动资讯的固定入口。</p>
+      </div>
+      <div class="card">
+        <h4>活动备忘</h4>
+        <p>利用记录模块简单标记自己的运动频率，辅助调整节奏，无需复杂配置。</p>
+      </div>
+      <div class="card">
+        <h4>轻量使用</h4>
+        <p>页面响应速度较快，适合在碎片时间打开，不依赖高规格设备。</p>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <p><strong>一个提示：</strong> 星空体育本身是一个<strong>稳定入口</strong>指向的工具型页面，你可以在任意主流浏览器中直接通过 <a href="https://zhapp-xingkongsports.com">星空体育</a> 开始使用。无需下载额外软件，也无需填写冗长表单即可查看公开内容。</p>
+    </div>
+
+    <h2>常见疑问摘要</h2>
+    <div class="faq-item">
+      <div class="faq-question">需要注册才能查看全部内容吗？</div>
+      <div class="faq-answer">部分内容（如公开资讯与基础浏览）无需注册即可访问。记录与个性化功能可选择性地创建账号，不强制。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">移动设备上体验如何？</div>
+      <div class="faq-answer">适配多数屏幕尺寸，排版以窄栏为主，横向滑动与点击区域都经过基础优化。你可以在手机浏览器中打开 <a href="https://zhapp-xingkongsports.com">星空体育</a> 直接使用。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">数据安全与隐私方面？</div>
+      <div class="faq-answer">平台仅收集必要的使用数据，不追踪无关行为。详细的隐私说明可在页面底部查看。</div>
+    </div>
+
+    <hr />
+
+    <h2>页面使用视角</h2>
+    <p>如果你正在寻找一个干净、专注的体育信息入口，且不希望被广告或复杂推荐干扰，<a href="https://zhapp-xingkongsports.com">星空体育</a> 提供的正是这种克制的体验。你可以把它当作一个“信息前哨”，在需要时快速访问，获取整理过的运动动态与记录框架。</p>
+    <p>以下是一个典型的轻量使用流程：打开星空体育 → 浏览当天资讯摘要 → 查看或添加一条简单运动记录 → 关闭。整个过程只需几次点击，不必陷入无限的信息流。</p>
+
+    <div class="footer-note">
+      <p>本介绍页仅作为产品说明参考，不构成任何形式的投资、竞技或健康建议。实际功能与界面以 <a href="https://zhapp-xingkongsports.com">星空体育</a> 为准。页面内容基于公开信息整理，保持真实与克制。</p>
+      <p style="margin-top: 0.8rem;">© 产品说明 · 星空体育介绍页</p>
+    </div>
+  </div>
+</body>
+</html>
