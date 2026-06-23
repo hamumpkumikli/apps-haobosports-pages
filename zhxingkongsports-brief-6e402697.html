@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>星空体育 · 视野之窗</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f5f3ef;
+            color: #1f2a35;
+            line-height: 1.7;
+        }
+
+        /* ——— ① 深色头图 (Hero) ——— */
+        .site-header {
+            background: #0e151e;
+            background-image: radial-gradient(ellipse at 30% 40%, #1d2b39 0%, #070b10 90%);
+            color: #dce3eb;
+            padding: 6rem 1.5rem 4.5rem;
+            text-align: center;
+            position: relative;
+            isolation: isolate;
+        }
+
+        .site-header::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(45deg,
+                    rgba(210, 230, 255, 0.02) 0px,
+                    rgba(210, 230, 255, 0.02) 1px,
+                    transparent 1px,
+                    transparent 8px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .site-header h1 {
+            font-size: 3rem;
+            font-weight: 350;
+            letter-spacing: 0.04em;
+            color: #eef3fa;
+            margin-bottom: 0.75rem;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .site-header .sub {
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: #b6c9de;
+            border-top: 1px solid rgba(220, 235, 250, 0.15);
+            display: inline-block;
+            padding-top: 0.8rem;
+            margin-top: 0.4rem;
+        }
+
+        /* ——— ② 浅色正文区 ——— */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 2.5rem;
+        }
+
+        /* 三段自然介绍（杂志式卡片） */
+        .intro-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .intro-card {
+            flex: 1 1 260px;
+            background: #fffffffa;
+            padding: 2rem 1.8rem;
+            border-radius: 18px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.25s;
+        }
+
+        .intro-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .intro-card .card-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: #7d8ea0;
+            text-transform: uppercase;
+            border-bottom: 2px solid #dce3eb;
+            padding-bottom: 0.25rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .intro-card h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #1b2938;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .intro-card p {
+            font-size: 0.95rem;
+            color: #2a3745;
+            margin-bottom: 0.2rem;
+        }
+
+        /* 强调色链接 */
+        a {
+            color: #b4532a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.15s, border 0.15s;
+            border-bottom: 1px solid transparent;
+        }
+
+        a:hover,
+        a:focus {
+            color: #8b3e1f;
+            border-bottom: 1px solid #b4532a;
+        }
+
+        /* ——— ③ 背景说明 + 杂志引用感 ——— */
+        .background-note {
+            background: #ebe7e0;
+            padding: 2.2rem 2rem;
+            border-radius: 24px;
+            margin: 2.5rem 0 3rem;
+            display: flow-root;
+        }
+
+        .background-note blockquote {
+            font-size: 1rem;
+            font-style: normal;
+            border-left: 4px solid #b4532a;
+            padding-left: 1.5rem;
+            color: #1f2e3c;
+            max-width: 680px;
+        }
+
+        .background-note blockquote strong {
+            color: #0e1a26;
+            font-weight: 600;
+        }
+
+        .background-note .attribution {
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
+            color: #5e6f7e;
+            letter-spacing: 0.02em;
+        }
+
+        /* ——— ④ FAQ 摘要 · 轻量 ——— */
+        .faq-mini {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem 2rem;
+            margin: 2.8rem 0 2rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px dashed #d1cdc4;
+            padding-bottom: 0.6rem;
+        }
+
+        .faq-item .q {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #1f2a35;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item .a {
+            font-size: 0.9rem;
+            color: #44545f;
+        }
+
+        /* ——— ⑤ 页尾访问提示 ——— */
+        .site-footer {
+            background: #e2dbd1;
+            padding: 2.2rem 1.5rem;
+            text-align: center;
+            color: #1b2b39;
+        }
+
+        .site-footer .footer-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .site-footer p {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .site-footer .visit-hint {
+            font-size: 0.9rem;
+            color: #344654;
+            letter-spacing: 0.03em;
+        }
+
+        .site-footer .visit-hint a {
+            font-weight: 600;
+            border-bottom: 1px solid #b4532a;
+            padding-bottom: 1px;
+        }
+
+        /* ——— 响应式 ——— */
+        @media (max-width: 640px) {
+            .site-header {
+                padding: 4.5rem 1.2rem 3.5rem;
+            }
+
+            .site-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .intro-grid {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .intro-card {
+                padding: 1.6rem;
+            }
+
+            .background-note {
+                padding: 1.6rem 1.3rem;
+            }
+
+            .faq-mini {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 2rem 1rem 1.5rem;
+            }
+
+            .site-header .sub {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 -->
+    <header class="site-header">
+        <div class="hero-inner">
+            <h1>星空体育</h1>
+            <div class="sub">视野 · 赛事 · 洞察</div>
+        </div>
+    </header>
+
+    <!-- 主体：三段自然介绍 + 背景说明 + FAQ摘要 + 页尾 -->
+    <main class="container">
+
+        <!-- 三段杂志卡片 -->
+        <section class="intro-grid">
+            <article class="intro-card">
+                <span class="card-label">识别 · 定位</span>
+                <h2>一个入口，一种方向</h2>
+                <p>打开 <a href="https://zhxingkongsports.com">星空体育</a> 的第一印象，往往决定了用户是否愿意停留。这个页面并不急于展示全部，而是用克制的排版告诉你：这里提供体育资讯与赛事相关内容，风格直接、信息优先。</p>
+            </article>
+
+            <article class="intro-card">
+                <span class="card-label">场景 · 氛围</span>
+                <h2>从深色到浅色</h2>
+                <p>深色头图建立沉静感，浅色正文区则让阅读变得轻松。在快速扫视中，你很快就能判断出网站属性——它偏向体育内容聚合，而非娱乐或社交。这种视觉节奏，本身也是一种效率。</p>
+            </article>
+
+            <article class="intro-card">
+                <span class="card-label">克制 · 叙述</span>
+                <h2>不堆砌，不喧哗</h2>
+                <p>没有弹窗、没有浮夸标语。每个段落都在回答一个问题：「这里是什么？」。如果你正在寻找一个专注于体育消息的站点，这种简洁本身就是一种信号。</p>
+            </article>
+        </section>
+
+        <!-- 背景说明（杂志风引用） -->
+        <div class="background-note">
+            <blockquote>
+                <strong>背景</strong> · 体育网站的面貌千差万别，有的侧重数据，有的偏向社区。而星空体育选择了更接近「杂志专题」的布局：一张头图定调，三段文字展开，结尾留下一个自然的访问入口。没有多余装饰，每个元素都为「快速识别用途」服务。
+            </blockquote>
+            <div class="attribution">—— 基于界面观察与内容策略</div>
+        </div>
+
+        <!-- FAQ 摘要（轻量） -->
+        <section class="faq-mini">
+            <div class="faq-item">
+                <div class="q">这个网站主要提供什么？</div>
+                <div class="a">以体育赛事、资讯和话题为主的聚合页面，内容偏重信息传达，风格务实。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">是否需要注册才能浏览？</div>
+                <div class="a">目前公开页面可直接访问，无需登录。部分功能区域可能随后续更新调整。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">移动端适配如何？</div>
+                <div class="a">页面采用响应式设计，在手机和平板上阅读体验经过专门优化，卡片自动折行。</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 页尾访问提示 -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>如果你对体育内容感兴趣，不妨从首页开始了解。</p>
+            <div class="visit-hint">
+                直接前往 <a href="https://zhxingkongsports.com">星空体育</a> · 简洁，也许正是你需要的节奏。
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
